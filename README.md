@@ -125,7 +125,8 @@ The following is an example of what is sent when a build fails:
 2. Optional - Create a new Shared Library and add the code from the teamcityUtility.js file.  
 3. Optional - Create Inbound integration and add the code from the Inbound_Build.js file.
 4. Optional - Create a Build Form.
-5. Create a users in xMatters that match userids in TeamCity. [xMatters Users](https://help.xmatters.com/OnDemand/groups/users.htm).  
+5. Configure a TeamCity Endpoint. [xMatters Endpoints]
+6. Create a users in xMatters that match userids in TeamCity. [xMatters Users](https://help.xmatters.com/OnDemand/groups/users.htm).  
    
 # Testing
 Have more then one person commit changes.  Run a Build in TeamCity.  You should see in the project console, when the build fails the webhook will push the build information to xMatters.  xMatters querries TeamCity for each change and notifies the committer of the change with their specifi changes and the build failure description.
@@ -135,7 +136,11 @@ Have more then one person commit changes.  Run a Build in TeamCity.  You should 
 
 A message should come through on your devices with your specific changes.  Which ever devices you have configured in xMatters.
 <kbd>
-<img src="media/DeviceMessage.png">
+<img src="media/DeviceMessage1.png">
+</kbd>
+A message should come through on your devices with your specific changes.  Which ever devices you have configured in xMatters.
+<kbd>
+<img src="media/DeviceMessage2.png">
 </kbd>
 
 # Troubleshooting
