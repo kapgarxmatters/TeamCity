@@ -15,7 +15,7 @@ TeamCity is a Java-based build management and continuous integration server from
 ## TeamCity set up
 Install the TeamCity webhook plugin [TeamCity Webhooks](https://plugins.jetbrains.com/plugin/8948-webhooks).  In TeamCity select a project and click on the Webhook Tab.  In the Webhook tab add a new webhook.
 <kbd>
-<img src="media/Projectwebhooks.png">
+<img src="media/Projectwebhook.png">
 </kbd>
 
 
