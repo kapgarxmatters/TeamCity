@@ -1,9 +1,8 @@
-# Jenkins
-The leading open source automation server, Jenkins provides hundreds of plugins to support building, deploying and automating any project. Check out the sweet video [here](media/JenkinsBuild.mp4). 
+# TeamCity
+TeamCity is a Java-based build management and continuous integration server from JetBrains. 
 
 # Pre-Requisites
-* Jenkins Instance with the http_request plugin installed.
-* Jenkins Communication Plan (see files) imported into xMatters or created in xMatters.
+* TeamCity Instance with the webhook plugin installed.
 * xMatters account - If you don't have one, [get one](https://www.xmatters.com)!
 
 # Files
@@ -14,7 +13,7 @@ The leading open source automation server, Jenkins provides hundreds of plugins 
 # Installation
 
 ## Jenkins set up
-Install the Jenkins http_request plugin [Jenkins Http_Request Plugin](https://wiki.jenkins-ci.org/display/JENKINS/HTTP+Request+Plugin).  In Jenkins select a build and click on the Configure option.  In the configure option add a build step and select the Http_Request item.
+Install the TeamCity webhook plugin [TeamCity Webhooks](https://plugins.jetbrains.com/plugin/8948-webhooks).  In TeamCity select a project and click on the Webhook Tab.  In the Webhook tab add a new webhook.
 <kbd>
 <img src="media/http_request.png">
 </kbd>
