@@ -125,7 +125,7 @@ The following is an example of what is sent when a build fails:
 2. Optional - Create a new Shared Library and add the code from the teamcityUtility.js file.  
 3. Optional - Create Inbound integration and add the code from the Inbound_Build.js file.
 4. Optional - Create a Build Form.
-5. Configure a TeamCity Endpoint. [xMatters Endpoints]https://help.xmatters.com/OnDemand/xmodwelcome/integrationbuilder/configure-endpoints.htm
+5. Configure a TeamCity Endpoint. [xMatters Endpoints](https://help.xmatters.com/OnDemand/xmodwelcome/integrationbuilder/configure-endpoints.htm)
 6. Create a users in xMatters that match userids in TeamCity. [xMatters Users](https://help.xmatters.com/OnDemand/groups/users.htm).  
    
 # Testing
