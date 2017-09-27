@@ -12,28 +12,112 @@ TeamCity is a Java-based build management and continuous integration server from
 
 # Installation
 
-## Jenkins set up
+## TeamCity set up
 Install the TeamCity webhook plugin [TeamCity Webhooks](https://plugins.jetbrains.com/plugin/8948-webhooks).  In TeamCity select a project and click on the Webhook Tab.  In the Webhook tab add a new webhook.
 <kbd>
-<img src="media/http_request.png">
+<img src="media/Projectwebhooks.png">
 </kbd>
+
 
 Enter the information needed to point to xMatters in the build steps.
 <kbd>
-<img src="media/build_step_part1.png">
+<img src="media/webhook1.png">
 </kbd>
 <kbd>
-<img src="media/build_step_part2.png">
+<img src="media/webhook2.png">
+</kbd>
+<kbd>
+<img src="media/webhook3.png">
+</kbd>
+<kbd>
+<img src="media/webhook4.png">
 </kbd>
 
 See the below list for the required information:
 
 | Input | Value |
 | ----- | ------|
-| URL   | This in an xMatters Inbound Integration URL.  See instructions on how to create. [Inbound Integration](https://help.xmatters.com/OnDemand/xmodwelcome/integrationbuilder/build-integrations.htm) |
-| HTTP mode | POST |
-| Pass build params to URL| Yes |
-| Request Body | JSON formated body of Jenkins Environmental values available to the http_plugin. [Jenkins Set Environment Variables](https://wiki.jenkins-ci.org/display/JENKINS/Building+a+software+project) |
+| URL   | This in an xMatters Inbound Integration URL.  You will create this on step 3 in the xMatters set up section.  For additonal information see instructions on how to create. [Inbound Integration](https://help.xmatters.com/OnDemand/xmodwelcome/integrationbuilder/build-integrations.htm) |
+| Enabled | checked |
+| Payload Format | Legacy Webhook (JSON) |
+| Trigger on Events | none checked |
+| On Completion | see screen shot |
+| All Project Builds | checked |
+| All Sub-Project Builds | checked |
+| Build | checked |
+|Authentication Type | No Authentication |
+| Payload Content | Nothing needs to be changed we use the default settings |
+
+The following is an example of what is sent when a build fails:
+
+```
+{
+"build":{
+"buildStatus":"Failure",
+"buildResult":"failure",
+"buildResultPrevious":"failure",
+"buildResultDelta":"unchanged",
+"notifyType":"buildFinished",
+"buildFullName":"Hello World TC Demo :: Build",
+"buildName":"Build",
+"buildId":"51",
+"buildTypeId":"HelloWorldTcDemo_Build",
+"buildInternalTypeId":"bt4",
+"buildExternalTypeId":"HelloWorldTcDemo_Build",
+"buildStatusUrl":"http://win2k8r2ent/viewLog.html?buildTypeId=HelloWorldTcDemo_Build&buildId=51",
+"buildStatusHtml":"<span class=\"tcWebHooksMessage\"><a href=\"http://win2k8r2ent/project.html?projectId=HelloWorldTcDemo\">Hello World TC Demo</a> :: <a href=\"http://win2k8r2ent/viewType.html?buildTypeId=HelloWorldTcDemo_Build\">Build</a> # <a href=\"http://win2k8r2ent/viewLog.html?buildTypeId=HelloWorldTcDemo_Build&buildId=51\"><strong>33</strong></a> has <strong>finished</strong> with a status of <a href=\"http://win2k8r2ent/viewLog.html?buildTypeId=HelloWorldTcDemo_Build&buildId=51\"> <strong>failure</strong></a> and was triggered by <strong>Git</strong></span>",
+"buildStartTime":"",
+"currentTime":"",
+"rootUrl":"http://win2k8r2ent",
+"projectName":"Hello World TC Demo",
+"projectId":"HelloWorldTcDemo",
+"projectInternalId":"project4",
+"projectExternalId":"HelloWorldTcDemo",
+"buildNumber":"33",
+"agentName":"win2k8r2ent",
+"agentOs":"Windows Server 2008 R2, version 6.1",
+"agentHostname":"127.0.0.1",
+"triggeredBy":"Git",
+"message":"Build Hello World TC Demo :: Build has finished. This is build number 33, has a status of \"failure\" and was triggered by Git",
+"text":"Hello World TC Demo :: Build has finished. Status: failure",
+"buildStateDescription":"finished",
+"buildRunners":[
+"Container Deployer"
+],
+"buildTags":[
+],
+"extraParameters":[
+{
+"name":"preferredDateFormat",
+"value":""
+}
+],
+"teamcityProperties":[],
+"changes":[
+{
+"version":"a9026bb7810183ad0b42855b40c7f8d439b9cd52",
+"change":{
+"files":[
+"server.js"
+],
+"comment":"Update server.js",
+"vcsRoot":"https://github.com/kapgarxmatters/Hello-World-TC-Demo#refs/heads/master"
+}
+},
+{
+"version":"fe04dbe00f1ed84b9f5b385fab3ef8ee51fa8982",
+"change":{
+"files":[
+"README.md"
+],
+"comment":"Update README.md",
+"vcsRoot":"https://github.com/kapgarxmatters/Hello-World-TC-Demo#refs/heads/master"
+}
+}
+]
+}
+}
+```
 
 
 ## xMatters set up
