@@ -6,9 +6,9 @@ TeamCity is a Java-based build management and continuous integration server from
 * xMatters account - If you don't have one, [get one](https://www.xmatters.com)!
 
 # Files
-* [JenkinsLibrary.js](JenkinsLibrary.js) - The javascript file to be pasted into a Shared Library. Jenkins is limited to pushing 3 or 4 environmental variables via the http_request plugin.  This library reaches back into Jenkins via a GET command to extract additional information about the build. 
-* [Jenkins.zip](Jenkins.zip) - The Communication Plan (optional).  You can use this pre built communication plan and import it into your xMatters instance or create one from scratch. 
-* [JenkinsIB.js](JenkinsIB.js) - The javascript file to be pasted into the Inbound IB component.  This script calls the library.
+* [teamcityUtility.js](teamcityUtility.js) - The javascript file to be pasted into a Shared Library. TeamCity pushes the general changes of a build.  This library reaches back into Teamcity to get the changes for each individual who committed on this build.   
+* [TeamCity.zip](TeamCity.zip) - The Communication Plan (optional).  You can use this pre built communication plan and import it into your xMatters instance or create one from scratch. 
+* [Inbound_Build.js](Inbound_Build.js) - The javascript file to be pasted into the Inbound IB component.  This script calls the library.
 
 # Installation
 
@@ -128,12 +128,12 @@ The following is an example of what is sent when a build fails:
 5. Create a users in xMatters that match userids in TeamCity. [xMatters Users](https://help.xmatters.com/OnDemand/groups/users.htm).  
    
 # Testing
-Run a Build in Jenkins.  You should see in the console, Jenkins executing the HTTP_Request Build step and a status of 202.
+Have more then one person commit changes.  Run a Build in TeamCity.  You should see in the project console, when the build fails the webhook will push the build information to xMatters.  xMatters querries TeamCity for each change and notifies the committer of the change with their specifi changes and the build failure description.
 <kbd>
-<img src="media/JenkinsConsole.png">
+<img src="media/teamcity.png">
 </kbd>
 
-A message should come through on your devices.  Which ever devices you have configured in xMatters.
+A message should come through on your devices with your specific changes.  Which ever devices you have configured in xMatters.
 <kbd>
 <img src="media/DeviceMessage.png">
 </kbd>
