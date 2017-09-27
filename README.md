@@ -121,12 +121,11 @@ The following is an example of what is sent when a build fails:
 
 
 ## xMatters set up
-1. Import the Communication Plan (see files).  If this step is done you can skip steps 2 and 3.
-2. Create a new Shared Library and add the code from the JenkinsLibrary.js file.  
-3. Create (In|Out)bound integration and add the code from the JenkinsIB.js file.
-4. Configure the xMatters Endpoints. [xMatters Endpoints](https://help.xmatters.com/OnDemand/xmodwelcome/integrationbuilder/configure-endpoints.htm)
-5. Create a DevOps group in xMatters and add your self to the group. [xMatters Groups](https://help.xmatters.com/OnDemand/groups/groups.htm).  The name of the DevOps group can be changed in the Inbound IB script.
-  
+1. Import the Communication Plan [TeamCity.zip](TeamCity.zip).  If this step is done you can skip steps 2-4.
+2. Optional - Create a new Shared Library and add the code from the teamcityUtility.js file.  
+3. Optional - Create Inbound integration and add the code from the Inbound_Build.js file.
+4. Optional - Create a Build Form.
+5. Create a users in xMatters that match userids in TeamCity. [xMatters Users](https://help.xmatters.com/OnDemand/groups/users.htm).  
    
 # Testing
 Run a Build in Jenkins.  You should see in the console, Jenkins executing the HTTP_Request Build step and a status of 202.
